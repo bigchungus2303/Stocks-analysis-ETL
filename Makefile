@@ -35,12 +35,12 @@ help:
 .PHONY: dbt-run
 ## Activate the virtual environment and source dbt.env
 dbt-run:
-	@if [ -d dbt_project/dbt_venv ]; then rm -rf dbt_project/dbt_venv; fi
-	python3 -m venv dbt_project/dbt_venv
+	@if [ -d capstone-dbt_2/dbt_venv ]; then rm -rf capstone-dbt_2/dbt_venv; fi
+	python3 -m venv capstone-dbt_2/dbt_venv
 	@echo "Virtual environment created."
-	@. dbt_project/dbt_venv/bin/activate && \
+	@. capstone-dbt_2/dbt_venv/bin/activate && \
 	pip install --upgrade pip && \
-	pip install -r dbt_project/dbt-requirements.txt && \
-	source dbt_project/dbt.env && \
-	cd dbt_project && \
+	pip install -r capstone-dbt_2/dbt-requirements.txt && \
+	source capstone-dbt_2/dbt.env && \
+	cd capstone-dbt_2 && \
 	exec /bin/bash
