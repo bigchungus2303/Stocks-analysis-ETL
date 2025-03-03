@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: int_monthly_stock_prices
+    description: "Monthly aggregated price data"
+    columns:
+      - name: monthly_price_id
+        description: "Unique identifier for monthly price record"
+        tests:
+          - unique
+          - not_null
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+      - name: month_date
+        description: "First day of the month"
+        tests:
+          - not_null
+      - name: month_open
+        description: "Opening price for the month"
+      - name: month_high
+        description: "Highest price in the month"
+      - name: month_low
+        description: "Lowest price in the month"
+      - name: month_close
+        description: "Closing price for the month"
+      - name: month_volume
+        description: "Total trading volume for the month"
+      - name: monthly_return
+        description: "Monthly price percentage change"
+      - name: monthly_price_range
+        description: "Monthly high-low range as percentage of open"
+      - name: trading_days
+        description: "Number of trading days in the month"

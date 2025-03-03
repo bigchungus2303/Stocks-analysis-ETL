@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: fact_stock_volatility_analysis
+    description: "Final mart for stock volatility analysis containing stocks with consistent volatility patterns and their characteristics"
+    columns:
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - unique
+          - not_null
+      - name: sector
+        description: "Market sector"
+      - name: industry
+        description: "Specific industry within sector"
+      - name: months_analyzed
+        description: "Number of months with sufficient data"
+      - name: high_vol_months
+        description: "Number of months with very high volatility"
+      - name: avg_volatility
+        description: "Average monthly volatility"
+      - name: volatility_of_volatility
+        description: "Standard deviation of monthly volatility (stability)"
+      - name: high_vol_frequency
+        description: "Percentage of months with very high volatility"
+      - name: avg_monthly_return
+        description: "Average monthly return"
+      - name: monthly_return_stddev
+        description: "Standard deviation of monthly returns"
+      - name: avg_monthly_volume
+        description: "Average monthly trading volume"
+      - name: avg_monthly_price_range
+        description: "Average monthly price range (high-low)"
+      - name: avg_sharpe_ratio
+        description: "Average risk-adjusted return"
+      - name: latest_volatility
+        description: "Most recent month's volatility"
+      - name: latest_month
+        description: "Most recent month analyzed"
+      - name: volatility_consistency_category
+        description: "Category of volatility consistency"
+      - name: risk_adjusted_performance
+        description: "Classification of risk-adjusted performance"

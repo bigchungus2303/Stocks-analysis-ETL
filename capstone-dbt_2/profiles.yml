@@ -1,0 +1,25 @@
+capstone_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: 
+      account: 
+
+      # User/password auth
+      user: 
+      password: 
+
+      role: 
+      database: 
+      warehouse: 
+      schema: "{{ env_var('DBT_SCHEMA')}}"
+      threads: 1
+      client_session_keep_alive: False
+      query_tag: "{{ env_var('DBT_SCHEMA')}}"
+
+      # optional
+      connect_retries: 0 # default 0
+      connect_timeout: 10 # default: 10
+      retry_on_database_errors: False # default: false
+      retry_all: False  # default: false
+      reuse_connections: True # default: True if client_session_keep_alive is False, otherwise None

@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: int_monthly_base_metrics
+    description: "Monthly aggregated volume and price metrics"
+    columns:
+      - name: monthly_metric_id
+        description: "Unique identifier for monthly metrics"
+        tests:
+          - unique
+          - not_null
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+      - name: month_date
+        description: "First day of the month"
+        tests:
+          - not_null
+      - name: monthly_volume
+        description: "Total trading volume for the month"
+      - name: avg_daily_volume
+        description: "Average daily trading volume"
+      - name: trading_days
+        description: "Number of trading days in the month"
+      - name: month_open
+        description: "Opening price for the month"
+      - name: month_close
+        description: "Closing price for the month"
+      - name: month_high
+        description: "Highest price in the month"
+      - name: month_low
+        description: "Lowest price in the month"
+      - name: monthly_return
+        description: "Monthly price percentage change"
+      - name: monthly_price_range
+        description: "Monthly high-low range as percentage of open"

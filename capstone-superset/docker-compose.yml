@@ -1,0 +1,35 @@
+
+services:
+  superset:
+    image: apache/superset:latest
+    container_name: superset
+    ports:
+      - "8088:8088"
+    command: >
+      bash -c "pip install snowflake-sqlalchemy &&
+              /usr/bin/run-server.sh"
+    environment:
+      - SUPERSET_SECRET_KEY=
+      - SQLALCHEMY_DATABASE_URI=sqlite:////app/superset.db
+    volumes:
+      - ./superset_config.py:/app/pythonpath/superset_config.py
+      - ./superset_data/superset.db:/app/superset.db
+      - ./superset_data/home:/app/superset_home
+
+  superset-init:
+    image: apache/superset:latest
+    container_name: superset-init
+    depends_on:
+      - superset
+    command: >
+      bash -c "pip install snowflake-sqlalchemy &&
+              superset db upgrade &&
+              superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@superset.com --password admin123 &&
+              superset init"
+    environment:
+      - SUPERSET_SECRET_KEY=
+      - SQLALCHEMY_DATABASE_URI=sqlite:////app/superset.db
+    volumes:
+      - ./superset_config.py:/app/pythonpath/superset_config.py
+      - ./superset_data/superset.db:/app/superset.db
+      - ./superset_data/home:/app/superset_home

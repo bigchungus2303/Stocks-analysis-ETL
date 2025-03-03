@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: stg_daily_stock_prices
+    description: "Staged daily stock price data with standardized types and quality filters"
+    columns:
+      - name: row_id
+        description: "Unique identifier for each row"
+        tests:
+          - unique
+          - not_null
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+      - name: trading_date
+        description: "Trading date"
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+      - name: open_price
+        description: "Opening price"
+      - name: high_price
+        description: "Highest price reach in date"
+      - name: low_price
+        description: "Lowest price reach in date"
+      - name: close_price
+        description: "Closing price"
+        tests:
+          - not_null
+      - name: trading_volume
+        description: "Trading volume for the day"
+      - name: year
+        description: "Year of trading date"
+      - name: month
+        description: "Month of trading date"
+      - name: day
+        description: "Day of trading date"
+      - name: rn
+        description: "rank"
+      - name: upload_date
+        description: "Day the data row has been added"
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date

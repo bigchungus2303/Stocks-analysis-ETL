@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: int_seasonal_patterns
+    description: "Analysis of seasonal return patterns"
+    
+    columns:
+      - name: seasonal_pattern_id
+        description: "Unique identifier for seasonal pattern record"
+        tests:
+          - unique
+          - not_null
+          
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+          
+      - name: sector
+        description: "Market sector"
+        
+      - name: industry
+        description: "Industry within sector"
+        
+      - name: year
+        description: "Year of the return"
+        tests:
+          - not_null
+          
+      - name: month_number
+        description: "Month number (1-12)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+              
+      - name: monthly_return
+        description: "Monthly return"
+        
+      - name: volume_vs_12m_avg
+        description: "Volume relative to 12-month average"
+        
+      - name: avg_month_return_all_years
+        description: "Average return for this month across all years"
+        
+      - name: std_month_return_all_years
+        description: "Standard deviation of returns for this month"
+        
+      - name: month_observations
+        description: "Number of observations for this month"
+        tests:
+          - not_null
+          
+      - name: month_return_zscore
+        description: "Z-score of the month's return"
+        
+      - name: is_positive_return
+        description: "Flag for positive return"
+        tests:
+          - accepted_values:
+              values: [0, 1]

@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_ticker_details
+    description: "Staged ticker dimension data with sector and industry classifications"
+    columns:
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - unique
+          - not_null
+      - name: company_name
+        decription: "Name of the company linked to a given ticker"
+      - name: sector
+        description: "Market sector"
+      - name: industry
+        description: "Specific industry within sector"
+      - name: ticker_id
+        description: "Unique identifier for ticker"
+        tests:
+          - unique
+          - not_null

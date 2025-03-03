@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: int_forward_returns
+    description: "Forward-looking returns following volume events"
+    columns:
+      - name: monthly_metric_id
+        description: "Unique identifier for monthly metrics"
+        tests:
+          - unique
+          - not_null
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+      - name: month_date
+        description: "First day of the month"
+        tests:
+          - not_null
+      - name: volume_spike_category
+        description: "Category of volume spike"
+      - name: volume_price_pattern
+        description: "Combined volume-price pattern category"
+      - name: volume_ratio_to_6m_avg
+        description: "Ratio of current month volume to 6-month average"
+      - name: current_month_return
+        description: "Return in the month of the volume event"
+      - name: next_1m_return
+        description: "Return in the following month"
+      - name: next_2m_return
+        description: "Return two months forward"
+      - name: next_3m_return
+        description: "Return three months forward"
+      - name: next_3m_cumulative_return
+        description: "Cumulative return over next three months"
+      - name: next_1m_positive
+        description: "Flag for positive next month return"
+      - name: next_3m_positive
+        description: "Flag for positive three-month return"

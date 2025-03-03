@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: int_volume_trend_analysis
+    description: "Analysis of volume trends and identification of volume spikes"
+    columns:
+      - name: monthly_metric_id
+        description: "Unique identifier for monthly metrics"
+        tests:
+          - unique
+          - not_null
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+      - name: month_date
+        description: "First day of the month"
+        tests:
+          - not_null
+      - name: monthly_volume
+        description: "Total trading volume for the month"
+      - name: avg_daily_volume
+        description: "Average daily trading volume"
+      - name: monthly_return
+        description: "Monthly price percentage change"
+      - name: prev_6m_avg_volume
+        description: "Average monthly volume for previous 6 months"
+      - name: volume_ratio_to_6m_avg
+        description: "Ratio of current month volume to 6-month average"
+      - name: volume_spike_category
+        description: "Category of volume spike"
+      - name: volume_price_pattern
+        description: "Combined volume-price pattern category"

@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: int_monthly_returns
+    description: "Monthly return calculations for seasonal analysis"
+    
+    columns:
+      - name: monthly_return_id
+        description: "Unique identifier for monthly return record"
+        tests:
+          - unique
+          - not_null
+          
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+          
+      - name: month_date
+        description: "First day of the month"
+        tests:
+          - not_null
+          
+      - name: year
+        description: "Year of the return"
+        tests:
+          - not_null
+          
+      - name: month_number
+        description: "Month number (1-12)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+              
+      - name: monthly_return
+        description: "Monthly return calculation"
+        
+      - name: monthly_return_alt
+        description: "Alternative monthly return calculation"
+        
+      - name: month_open
+        description: "Opening price for the month"
+        
+      - name: month_close
+        description: "Closing price for the month"
+        
+      - name: monthly_volume
+        description: "Total trading volume for the month"
+        
+      - name: avg_daily_volume
+        description: "Average daily trading volume"
+        
+      - name: trading_days
+        description: "Number of trading days in the month"

@@ -1,0 +1,109 @@
+version: 2
+
+models:
+  - name: fact_volume_price_analysis
+    description: "Analysis of volume-price relationships and their predictive power for future returns"
+    
+    columns:
+      - name: pattern_analysis_id
+        description: "Unique identifier for each pattern and ticker combination"
+        tests:
+          - unique
+          - not_null
+
+      # Pattern Level Metrics
+      - name: volume_spike_category
+        description: "Category of volume spike (e.g., Extreme, Major, Moderate)"
+        tests:
+          - not_null
+      
+      - name: volume_price_pattern
+        description: "Combined volume and price movement pattern"
+        tests:
+          - not_null
+      
+      - name: sector
+        description: "Market sector"
+        tests:
+          - not_null
+      
+      - name: industry
+        description: "Industry within sector"
+        tests:
+          - not_null
+      
+      - name: pattern_occurrences
+        description: "Number of times this pattern occurred"
+        tests:
+          - not_null
+      
+      - name: unique_tickers
+        description: "Number of different stocks showing this pattern"
+        tests:
+          - not_null
+
+      # Return Metrics
+      - name: avg_next_1m_return
+        description: "Average return in the month following the pattern"
+      
+      - name: std_next_1m_return
+        description: "Standard deviation of next month returns"
+      
+      - name: avg_next_3m_return
+        description: "Average cumulative return over three months following the pattern"
+      
+      - name: std_next_3m_return
+        description: "Standard deviation of three-month cumulative returns"
+
+      # Success Rates
+      - name: next_1m_success_rate
+        description: "Proportion of positive returns in the following month"
+        tests:
+          - not_null
+          - value_between:
+              min_value: 0
+              max_value: 1
+      
+      - name: next_3m_success_rate
+        description: "Proportion of positive returns over the following three months"
+        tests:
+          - not_null
+          - value_between:
+              min_value: 0
+              max_value: 1
+
+      # Distribution Statistics
+      - name: next_1m_return_5th_percentile
+        description: "5th percentile of next month returns"
+      
+      - name: next_1m_return_25th_percentile
+        description: "25th percentile of next month returns"
+      
+      - name: next_1m_return_75th_percentile
+        description: "75th percentile of next month returns"
+      
+      - name: next_1m_return_95th_percentile
+        description: "95th percentile of next month returns"
+
+      # Volume Characteristics
+      - name: avg_volume_ratio
+        description: "Average ratio of volume to 6-month moving average"
+      
+      - name: max_volume_ratio
+        description: "Maximum ratio of volume to 6-month moving average"
+
+      # Ticker Level Metrics
+      
+      - name: total_months
+        description: "Total months of data for the ticker"
+      
+      - name: high_volume_spike_count
+        description: "Number of major or extreme volume spikes"
+      
+      - name: high_volume_spike_frequency
+        description: "Frequency of major or extreme volume spikes"
+        tests:
+          - not_null
+          - value_between:
+              min_value: 0
+              max_value: 1

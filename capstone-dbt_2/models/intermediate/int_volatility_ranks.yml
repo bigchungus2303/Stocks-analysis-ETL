@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: int_volatility_ranks
+    description: "Ranked volatility metrics with percentiles and categories"
+    columns:
+      - name: volatility_id
+        description: "Unique identifier for monthly volatility record"
+        tests:
+          - unique
+          - not_null
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+      - name: month_date
+        description: "First day of the month"
+        tests:
+          - not_null
+      - name: trading_days
+        description: "Number of trading days in the month"
+      - name: avg_daily_return
+        description: "Average daily return for the month"
+      - name: daily_return_stddev
+        description: "Standard deviation of daily returns (volatility)"
+      - name: annualized_volatility
+        description: "Annualized volatility (stddev * sqrt(252))"
+      - name: sharpe_ratio
+        description: "Sharpe ratio (return / risk)"
+      - name: max_daily_loss
+        description: "Maximum daily loss in the month"
+      - name: max_daily_gain
+        description: "Maximum daily gain in the month"
+      - name: daily_return_range
+        description: "Range between max gain and max loss"
+      - name: month_open
+        description: "Opening price for the month"
+      - name: month_high
+        description: "Highest price in the month"
+      - name: month_low
+        description: "Lowest price in the month"
+      - name: month_close
+        description: "Closing price for the month"
+      - name: month_volume
+        description: "Total trading volume for the month"
+      - name: monthly_return
+        description: "Monthly price percentage change"
+      - name: monthly_price_range
+        description: "Monthly high-low range as percentage of open"
+      - name: volatility_rank
+        description: "Rank of stock by volatility within the month (1 = highest)"
+      - name: volatility_percentile
+        description: "Percentile of stock's volatility within the month"
+      - name: volatility_category
+        description: "Categorical volatility level"

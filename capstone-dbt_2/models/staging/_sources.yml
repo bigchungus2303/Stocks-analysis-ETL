@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: bigchungus0148
+    database: dataexpert_student
+    schema: bigchungus0148
+    tables:
+      - name: stock_prices_version5
+      - name: ticker_details

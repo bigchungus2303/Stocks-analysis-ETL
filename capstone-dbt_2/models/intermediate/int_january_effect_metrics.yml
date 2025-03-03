@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: int_january_effect_metrics
+    description: "Detailed analysis of the January effect"
+    
+    columns:
+      - name: january_effect_id
+        description: "Unique identifier for January effect analysis"
+        tests:
+          - unique
+          - not_null
+          
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+          
+      - name: sector
+        description: "Market sector"
+        
+      - name: industry
+        description: "Industry within sector"
+        
+      - name: year
+        description: "Year of analysis"
+        tests:
+          - not_null
+          
+      - name: january_return
+        description: "Return in January"
+        
+      - name: january_volume_ratio
+        description: "January volume relative to 12-month average"
+        
+      - name: prev_december_return
+        description: "Return in previous December"
+        
+      - name: next_february_return
+        description: "Return in following February"
+        
+      - name: avg_non_january_return
+        description: "Average return in non-January months"
+        
+      - name: std_non_january_return
+        description: "Standard deviation of non-January returns"
+        
+      - name: january_excess_return
+        description: "January return minus average non-January return"
+        
+      - name: january_effect_zscore
+        description: "Z-score of January excess return"
+        
+      - name: january_outperformed
+        description: "Flag if January outperformed other months"
+        tests:
+          - accepted_values:
+              values: [0, 1]
+              
+      - name: january_effect_strength
+        description: "Categorization of January effect strength"
+        tests:
+          - accepted_values:
+              values: ['Strong', 'Moderate', 'Weak']

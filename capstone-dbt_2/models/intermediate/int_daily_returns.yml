@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: int_daily_returns
+    description: "Daily returns calculated from day-to-day price changes"
+    columns:
+      - name: return_id
+        description: "Unique identifier for each daily return"
+        tests:
+          - unique
+          - not_null
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+      - name: trading_date
+        description: "Trading date"
+        tests:
+          - not_null
+      - name: close_price
+        description: "Closing price"
+      - name: prev_close_price
+        description: "Previous day's closing price"
+      - name: daily_return
+        description: "Daily return as percentage"
+      - name: year
+        description: "Year of trading date"
+      - name: month
+        description: "Month of trading date"
+      - name: month_date
+        description: "First day of the month for aggregation"

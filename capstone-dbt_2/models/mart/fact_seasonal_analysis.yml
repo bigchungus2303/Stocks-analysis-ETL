@@ -1,0 +1,109 @@
+version: 2
+
+models:
+  - name: fact_seasonal_analysis
+    description: "Final mart combining seasonal patterns and January effect analysis"
+    
+    columns:
+      - name: seasonal_analysis_id
+        description: "Unique identifier for seasonal analysis record"
+        tests:
+          - unique
+          - not_null
+          
+      - name: sector
+        description: "Market sector"
+        tests:
+          - not_null
+          
+      - name: month_number
+        description: "Month number (1-12)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+          
+      - name: year
+        description: "Year of analysis"
+        tests:
+          - not_null
+          
+      - name: stocks_count
+        description: "Number of stocks analyzed in the sector"
+        tests:
+          - not_null
+          
+      - name: avg_sector_return
+        description: "Average return for the sector"
+        tests:
+          - not_null
+          
+      - name: std_sector_return
+        description: "Standard deviation of sector returns"
+        tests:
+          - not_null
+          
+      - name: avg_volume_ratio
+        description: "Average volume ratio for the sector"
+        tests:
+          - not_null
+          
+      - name: positive_return_ratio
+        description: "Proportion of positive returns"
+        tests:
+          - not_null
+          - value_between:
+              min_value: 0
+              max_value: 1
+          
+      - name: industry
+        description: "Industry within sector"
+          
+      - name: stocks_analyzed
+        description: "Number of stocks analyzed for January effect"
+          
+      - name: avg_january_return
+        description: "Average January return"
+          
+      - name: avg_january_excess_return
+        description: "Average excess return in January vs other months"
+          
+      - name: avg_january_volume_ratio
+        description: "Average volume ratio in January"
+          
+      - name: january_outperformance_ratio
+        description: "Proportion of stocks where January outperformed"
+        tests:
+          - value_between:
+              min_value: 0
+              max_value: 1
+          
+      - name: strong_effect_ratio
+        description: "Proportion of stocks showing strong January effect"
+        tests:
+          - value_between:
+              min_value: 0
+              max_value: 1
+          
+      - name: historical_excess_return
+        description: "Historical average of January excess returns"
+          
+      - name: historical_effect_zscore
+        description: "Historical z-score of January effect"
+          
+      - name: historical_significance_ratio
+        description: "Historical proportion of significant January effects"
+        tests:
+          - value_between:
+              min_value: 0
+              max_value: 1
+          
+      - name: yoy_effect_change
+        description: "Year-over-year change in January effect strength"
+          
+      - name: seasonal_strength
+        description: "Categorization of seasonal pattern strength"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Very Strong', 'Strong', 'Neutral', 'Weak', 'Very Weak']

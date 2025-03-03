@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: int_monthly_volatility
+    description: "Monthly volatility metrics calculated from daily returns"
+    columns:
+      - name: volatility_id
+        description: "Unique identifier for monthly volatility record"
+        tests:
+          - unique
+          - not_null
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+      - name: month_date
+        description: "First day of the month"
+        tests:
+          - not_null
+      - name: trading_days
+        description: "Number of trading days in the month"
+      - name: avg_daily_return
+        description: "Average daily return for the month"
+      - name: daily_return_stddev
+        description: "Standard deviation of daily returns (volatility)"
+      - name: annualized_volatility
+        description: "Annualized volatility (stddev * sqrt(252))"
+      - name: sharpe_ratio
+        description: "Sharpe ratio (return / risk)"
+      - name: max_daily_loss
+        description: "Maximum daily loss in the month"
+      - name: max_daily_gain
+        description: "Maximum daily gain in the month"
+      - name: daily_return_range
+        description: "Range between max gain and max loss"
