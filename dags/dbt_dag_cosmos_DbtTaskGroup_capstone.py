@@ -36,7 +36,7 @@ default_args = {
 def main():
     dbt_build_whole_project = BashOperator(
         task_id = 'dbt_build_whole_project',
-        bash_command='export DBT_SCHEMA="acampi" && cd /usr/local/airflow/capstone-dbt && dbt build'
+        bash_command='export DBT_SCHEMA="acampi" && cd /usr/local/airflow/capstone-dbt_2 && dbt build'
     )
 
 # def dbt_dag_cosmos_DbtTaskGroup_whole_capstone():
