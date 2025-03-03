@@ -27,10 +27,10 @@ POLYGON_API_KEY = literal_eval(get_secret("POLYGON_CREDENTIALS"))['AWS_SECRET_AC
 schema = 'bigchungus0148'
 
 catalog = load_catalog(
-    name="academy",
-    type="rest",
-    uri="https://api.tabular.io/ws",
-    warehouse=get_secret("CATALOG_NAME"),  # Adjust secret name
+    name="",
+    type="",
+    uri="",
+    warehouse=get_secret(""),  # Adjust secret name
     credential=tabular_credential,
 )
 
