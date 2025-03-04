@@ -1,12 +1,26 @@
 **📊 Stock Market Volatility & Seasonal Trends Analysis**
+
+**PLEASE NOTE THAT THIS IS JUST A TEMPLATE FOR PREVIEW, ALL SENSITIVE INFO SUCH AS CREDENTIALS TO AWS, SNOWFLAKE, TABULAR.IO, POLYGON.io, TRINO STARBURST... ARE DELETED, SO YOU WONT BE ABLE TO RUN THE PROJECT**
+
+**PLEASE REACH OUT IF YOU HAVE ANY QUESTION**
+
 ====================
 
 This project explores key aspects of stock market behavior, focusing on volatility, trading volume spikes, and seasonal patterns:
 
 High Volatility Stocks: Identifies stocks with the most significant monthly price fluctuations (measured by standard deviation of daily returns) and examines whether these stocks share common traits.
+
 Trading Volume & Price Movements: Investigates whether spikes in monthly trading volume correlate with price changes in the following months.
+
 January Effect Across Sectors: Analyzes how the well-known January Effect (stocks tending to rise in January) varies across different market sectors and whether its impact has changed over time.
+
 This project leverages data analysis and visualization techniques to uncover insights into market behavior. 📈📉
+
+**Linkedin contact:**
+
+Sam Do : https://www.linkedin.com/in/sam-d-a51203149/
+
+Albert Campillo: https://www.linkedin.com/in/albertcampillo/
 
 **Table of Contents**
 
@@ -40,8 +54,8 @@ This project leverages data analysis and visualization techniques to uncover ins
 
 1. **Clone the Repository**: Open a terminal, navigate to your desired directory, and clone the repository using:
     ```bash
-    git clone git@github.com:DataExpert-io/airflow-dbt-project-albert-sam.git # clone the repo
-    cd airflow-dbt-project-albert-sam # navigate into the new folder
+    git clone git@github.com:bigchungus2303/Stocks-analysis-ETL.git # clone the repo
+    cd Stocks-analysis-ETL # navigate into the new folder
     ```
 
     1. If you don’t have SSH configured with the GitHub CLI, please follow the instructions for [generating a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=cli) in the GitHub docs.
