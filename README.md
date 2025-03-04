@@ -294,7 +294,7 @@ Each Astro project contains various directories and files. Learn more about the 
 # 🚀 Capstone Summary
 ## **Capstone Workflow:**
 This workflow represents a comprehensive pipeline that processes stock market data through ingestion, transformation and visualization layers, all orchestrated by Apache Airflow
-### **Key aspects**:
+### **Key aspects:**
 - Orchestration Layer: Apache Airflow manages the workflow automation, dependency management, and scheduling of tasks including daily ETL processes, quality checks, and data loading.
 - Ingestion Layer: Data is sourced from Polygon.io and leveraged into an Iceberg table, then loaded into Snowflake RAW tables.
 - Transformation Layer: DBT handles transformations across staging, intermediate, and mart layers, processing various financial metrics including volatility, returns, and seasonal patterns.
