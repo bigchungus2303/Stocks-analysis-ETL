@@ -40,6 +40,7 @@ Albert Campillo: https://www.linkedin.com/in/albertcampillo/
     - [Question 2](#Question_2)
     - [Question 3](#Question_3)
   - [Data Visualization](#data_visualization)
+  - [Next Step](#next_step)
 
     
 # **🚀 Getting Started**
@@ -505,3 +506,11 @@ Question 2
 
 Question 3
 ![Question 3 dashboard](https://github.com/DataExpert-io/airflow-dbt-project/blob/bb247eae663a0da3ccb9bb3f8b4cdf97a24aafbe/images/Q3%20dashboard.png)
+
+
+## Next Step:
+- Identify issue in the pipeline and find resolution
+- Migrate the visualisation to a more capable platform (superset has many limitations)
+- Add another pipeline to identify stocks that got split
+- Add another pipeline for data streaming
+- ...
