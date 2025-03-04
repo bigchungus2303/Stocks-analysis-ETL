@@ -42,7 +42,7 @@ Albert Campillo: https://www.linkedin.com/in/albertcampillo/
   - [Data Visualization](#data_visualization)
 
     
-# 🚀 Getting Started
+# **🚀 Getting Started**
 
 
 ## **Prerequisites**
@@ -291,7 +291,7 @@ Each Astro project contains various directories and files. Learn more about the 
 - **`requirements.txt`**: Install Python packages needed for your project by adding them to this file.
 - **`airflow_settings.yaml`**: Use this local-only file to define Airflow Connections, Variables, and Pools. This allows you to manage these configurations locally instead of via the Airflow UI during DAG development.
 
-# **🚀 Capstone Summary**
+# 🚀 Capstone Summary
 ## **Capstone Workflow:**
 This workflow represents a comprehensive pipeline that processes stock market data through ingestion, transformation and visualization layers, all orchestrated by Apache Airflow
 ### **Key aspects**:
