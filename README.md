@@ -1,12 +1,12 @@
 **📊 Stock Market Volatility & Seasonal Trends Analysis**
 
-**PLEASE NOTE THAT THIS IS JUST A TEMPLATE FOR PREVIEW, ALL SENSITIVE INFO SUCH AS CREDENTIALS TO AWS, SNOWFLAKE, TABULAR.IO, POLYGON.io, TRINO STARBURST... ARE DELETED, SO YOU WONT BE ABLE TO RUN THE PROJECT**
-
+**DISCLAIMER**
+ PLEASE NOTE THAT THIS IS JUST A TEMPLATE AND IS A ON-GOING PROJECT FOR PREVIEW, ALL SENSITIVE INFO SUCH AS CREDENTIALS ARE DELETED, SO YOU WONT BE ABLE TO RUN THE PROJECT
 **PLEASE REACH OUT IF YOU HAVE ANY QUESTION!!**
 
 ====================
 
-This project explores key aspects of stock market behavior, focusing on volatility, trading volume spikes, and seasonal patterns:
+This draft is the first release of an ongoing project that explores key aspects of stock market behavior, focusing on volatility, trading volume spikes, and seasonal patterns:
 
 High Volatility Stocks: Identifies stocks with the most significant monthly price fluctuations (measured by standard deviation of daily returns) and examines whether these stocks share common traits.
 
