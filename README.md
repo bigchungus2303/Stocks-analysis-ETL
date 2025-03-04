@@ -24,12 +24,12 @@ Albert Campillo: https://www.linkedin.com/in/albertcampillo/
 
 **Table of Contents**
 
-- [Getting Started](#getting-started)
+- [🚀 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Local Development](#local-development)
     - [Debugging](#debugging)
   - [dbt Project Setup](#dbt-project-setup)
-- [Capstone Summary](#capstone-summary)
+- [🚀 Capstone Summary](#capstone-summary)
   - [Capstone Workflow](#capstone-workflow)
       - [Key aspects](#key_aspects)
   - [Airflow DAG daily_raw_data_load_dag_v1](#airflow-dag-daily-raw-data-load-dag-v1)
