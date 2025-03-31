@@ -45,7 +45,7 @@ Albert Campillo: https://www.linkedin.com/in/albertcampillo/
     
 # **🚀 Getting Started**
 
-![Dataflow](include/images/workflow_project.gif)
+![Dataflow](include/images/workflow_project.jpg)
 
 ## **Prerequisites**
 
