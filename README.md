@@ -29,13 +29,13 @@ Albert Campillo: https://www.linkedin.com/in/albertcampillo/
   - [Local Development](#local-development)
     - [Debugging](#debugging)
   - [dbt Project Setup](#dbt-project-setup)
-- [🚀 Capstone Summary](#capstone-summary)
-  - [Capstone Workflow](#capstone-workflow)
+- [🚀 Project Summary](#Project-summary)
+  - [Project Workflow](#Project-workflow)
       - [Key aspects](#key_aspects)
   - [Airflow DAG daily_raw_data_load_dag_v1](#airflow-dag-daily-raw-data-load-dag-v1)
   - [Airflow DAG back_fill_raw_data_load_dag_v1](#airflow-dag-back_fill-raw-data-load-dag-v1)
   - [Data Modeling & Transformation](data-modeling-&-transformation#)
-  - [Capstone Key Questions](#capstone-key-questions)
+  - [Project Key Questions](#Project-key-questions)
     - [Question 1](#Question_1)
     - [Question 2](#Question_2)
     - [Question 3](#Question_3)
@@ -45,6 +45,7 @@ Albert Campillo: https://www.linkedin.com/in/albertcampillo/
     
 # **🚀 Getting Started**
 
+![Dataflow](https://github.com/bigchungus2303/Stocks-analysis-ETL/blob/eaefd37dfe24e82ad3e4b43f57687e0bbbab9d9a/include/images/workflow_Project.gif)
 
 ## **Prerequisites**
 
@@ -285,22 +286,22 @@ Each Astro project contains various directories and files. Learn more about the 
 - **`dags`**: This directory houses Directed Acyclic Graphs (DAGs), which represent the workflows in Apache Airflow. Note: it's highly encouraged that you create DAGs in subfolders so that you can make use of the `.airflowignore` file when testing locally. Learn more below:
     - **`community/`**: Stores default example DAGs for training and local testing.
     - **`.airflowignore`**: Use this file to exclude folders from the Airflow scheduler, handy for local testing and avoiding production changes.
-- **`capstone-dbt_2`**: Here lies the dbt project, accessible both locally for testing and development, and within Airflow to be used in our DAGs.
-- **`capstone-superset`**: the visualisation part for the project
+- **`Project-dbt_2`**: Here lies the dbt project, accessible both locally for testing and development, and within Airflow to be used in our DAGs.
+- **`Project-superset`**: the visualisation part for the project
 - **`Dockerfile`**: This file is based on the Astro Docker image and can be customized to include project-specific commands and/or overrides for runtime behavior. Understanding this file is optional but you're welcome to explore if you wish to dive deeper into Astro.
 - **`include`** contains additional project files:
 - **`requirements.txt`**: Install Python packages needed for your project by adding them to this file.
 - **`airflow_settings.yaml`**: Use this local-only file to define Airflow Connections, Variables, and Pools. This allows you to manage these configurations locally instead of via the Airflow UI during DAG development.
 
-# **🚀 Capstone Summary**
-## **Capstone Workflow:**
+# **🚀 Project Summary**
+## **Project Workflow:**
 This workflow represents a comprehensive pipeline that processes stock market data through ingestion, transformation and visualization layers, all orchestrated by Apache Airflow
 ### **Key aspects:**
 - Orchestration Layer: Apache Airflow manages the workflow automation, dependency management, and scheduling of tasks including daily ETL processes, quality checks, and data loading.
 - Ingestion Layer: Data is sourced from Polygon.io and leveraged into an Iceberg table, then loaded into Snowflake RAW tables.
 - Transformation Layer: DBT handles transformations across staging, intermediate, and mart layers, processing various financial metrics including volatility, returns, and seasonal patterns.
-- Visualization Layer: Apache Superset provides dashboards for stock volatility, volume price effects, January effects analysis (key questions to answer as part of this Capstone)
-![Workflow Diagram](images/workflow_capstone.gif)
+- Visualization Layer: Apache Superset provides dashboards for stock volatility, volume price effects, January effects analysis (key questions to answer as part of this Project)
+![Workflow Diagram](images/workflow_project.gif)
 
 ## Airflow DAG daily_raw_data_load_dag_v1:
 - DAG Definition and Orchestration
@@ -377,6 +378,8 @@ dbt build
 - In addition, this DAG is performed specifically for backfilling purpose and will only be triggered manually.
 - User can adjust date period in function daily_raw_data_load_dag_v1() for backfill purpose.
 
+![Dag Running In Production](https://github.com/bigchungus2303/Stocks-analysis-ETL/blob/eaefd37dfe24e82ad3e4b43f57687e0bbbab9d9a/include/images/Dag-running-in-deployment.PNG)
+
 ## Data Modeling & Transformation:
 - As described in the DAG task flow, the 8th and final step initiated a data transformation workflow defined in Data Build Tool (DBT).
 - The choice of leveraging the Polygon API responded to our personal interest in the stock market and the goal to answer several questions regarding stock performance not commonly covered in such type of analysis.
@@ -397,8 +400,8 @@ dbt build
   - stg_
     This staging model processes ticker-to-sector mappings, standardizing sector and industry classifications and ensuring there are no null values by defaulting them to 'Unknown'. The model generates a unique ticker identifier which will be used for joining operations in downstream transformations, ensuring data integrity in the dimensional model.
 
-## Capstone Key Questions:
-Hereby the questions covered in this capstone, as well as all the intermediate and mart models developed for each purpose.
+## Project Key Questions:
+Hereby the questions covered in this Project, as well as all the intermediate and mart models developed for each purpose.
 
 ### **Question 1:**
 “Which stocks consistently show the highest monthly price volatility (measured by the standard deviation of daily returns), and do these volatile stocks share common characteristics?”
