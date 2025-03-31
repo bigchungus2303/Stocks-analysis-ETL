@@ -45,7 +45,7 @@ Albert Campillo: https://www.linkedin.com/in/albertcampillo/
     
 # **🚀 Getting Started**
 
-![Dataflow](https://github.com/bigchungus2303/Stocks-analysis-ETL/blob/eaefd37dfe24e82ad3e4b43f57687e0bbbab9d9a/include/images/workflow_Project.gif)
+![Dataflow](include/images/workflow_project.gif)
 
 ## **Prerequisites**
 
